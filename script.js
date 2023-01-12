@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            currentIndex: 0,
             user: {
                 name: 'Nome Utente',
                 avatar: '_io'
