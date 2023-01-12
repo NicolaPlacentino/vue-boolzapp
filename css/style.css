@@ -126,3 +126,9 @@ header{
     background-color: #f3eeea;
 }
 
+#chat-area footer i{
+    font-size: 28px;
+    color: #76706b;
+
+    cursor: pointer;
+}
