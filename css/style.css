@@ -1,0 +1,58 @@
+/* reset */
+:root {
+    --icon-gray: #b1b1b1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* utils */
+
+.h-100px{
+    height: 100px;
+}
+
+.h-80px{
+    height: 80px;
+}
+
+.w-80px{
+    width: 80px;
+}
+
+.w-60px{
+    width: 60px;
+}
+
+.ofy-auto{
+    overflow-y: auto;
+}
+
+/* general */
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #009688 0 17%, #dadbd3 15% 100%)
+}
+
+main{
+    width: 1200px;
+    height: calc(100vh - 60px);
+    background-color: whitesmoke;
+    margin: 30px auto;
+    padding: 0;
+}
+
+#sidebar header{
+    background-color: #eaeaea;
+}
+
+#this-user-tools *{
+    color: var(--icon-gray);
+    font-size: 30px;
+    margin: 0 10px;
+}
