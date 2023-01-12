@@ -39,6 +39,37 @@
     background-color: rgb(210, 210, 210);
 }
 
+.message{
+    background-color: white;
+    padding: 10px 15px 25px 15px;
+    margin-bottom: 20px;
+
+    border-radius: 20px 20px 20px 5px;
+    max-width: 300px;
+    min-height: 50px;
+    max-height: 800px;
+
+    align-self: flex-start;
+
+    position: relative;
+}
+
+.message.sent{
+    background-color: #d5f9ba;
+    border-radius: 20px 20px 5px 20px;
+    align-self: flex-end;
+}
+
+.message .date{
+    font-size: 12px;
+    color: gray;
+    text-align: right;
+
+    position: absolute;
+    bottom: 8px;
+    right: 15px;
+}
+
 /* general */
 
 body{
@@ -83,5 +114,15 @@ header{
 
 #contact-list{
     height: calc(888px - 260px);
+}
+
+#chat-area #chat{
+    background-image: url("../img/mine.jpg");    
+    height: 100px;
+    padding: 40px 80px;
+}
+
+#chat-area footer{
+    background-color: #f3eeea;
 }
 
