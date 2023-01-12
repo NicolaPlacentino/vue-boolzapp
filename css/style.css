@@ -19,6 +19,10 @@
     height: 80px;
 }
 
+.h-60px{
+    height: 60px;
+}
+
 .w-80px{
     width: 80px;
 }
@@ -55,4 +59,20 @@ main{
     color: var(--icon-gray);
     font-size: 30px;
     margin: 0 10px;
+    cursor: pointer;
+}
+
+#notifications{
+    background-color: #8edafc;
+}
+
+#notifications i{
+    color: #8edafc;
+    font-size: 30px;
+}
+
+#notifications a {
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
 }
