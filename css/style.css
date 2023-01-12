@@ -35,6 +35,10 @@
     overflow-y: auto;
 }
 
+#contact-list > *.active{
+    background-color: rgb(210, 210, 210);
+}
+
 /* general */
 
 body{
@@ -51,7 +55,7 @@ main{
     padding: 0;
 }
 
-#sidebar header{
+header{
     background-color: #eaeaea;
 }
 
@@ -76,3 +80,8 @@ main{
     color: gray;
     cursor: pointer;
 }
+
+#contact-list{
+    height: calc(888px - 260px);
+}
+
