@@ -52,6 +52,8 @@
 
     align-self: flex-start;
 
+    cursor: default;
+
     position: relative;
 }
 
@@ -115,6 +117,8 @@ header{
 
 #contact-list{
     height: calc(888px - 260px);
+
+    cursor: pointer;
 }
 
 #chat-area #chat{
@@ -141,4 +145,8 @@ header{
 
 .message:hover .dropdown{
     opacity: 1;
+}
+
+#this-user-info, #contact-info{
+    cursor: default;
 }
