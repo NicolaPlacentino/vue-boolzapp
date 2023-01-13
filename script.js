@@ -3,6 +3,11 @@ const dt = luxon.DateTime
 const app = Vue.createApp({
     data(){
         return{
+            newMessage:{
+              date: this.getCurrentTime(),
+              text: '',
+              status: 'sent'
+            },
             currentIndex: 0,
             user: {
                 name: 'Nome Utente',
@@ -91,9 +96,46 @@ const app = Vue.createApp({
             ]
         }
     },
+    computed:{
+      currentContact(){
+        return this.contacts[this.currentIndex]
+      },
+      currentChat(){
+        return this.currentContact.messages
+      }
+    },
     methods:{
       getCurrentTime(){
-        dt.now().toLocaleString(dt.DATETIME_MED)
+        return dt.now().toLocaleString(dt.DATETIME_MED)
+      },
+      sendNewMessage(){
+        this.currentChat.push(this.newMessage)
+        this.newMessage = {
+          date: this.getCurrentTime(),
+          text: '',
+          status: 'sent'
+        }
+      },
+      receiveNewMessage(){
+        setTimeout(() => {
+          this.newMessage = {
+            date: this.getCurrentTime(),
+            text: 'Ok',
+            status: 'received'
+          }
+          this.currentChat.push(this.newMessage)
+          this.newMessage = {
+            date: this.getCurrentTime(),
+            text: '',
+            status: 'sent'
+          }
+        }, 2000);
+      },
+      sendAndReceive(){
+        if(this.newMessage.text){
+          this.sendNewMessage()
+          this.receiveNewMessage()
+        }
       }
     }
 });

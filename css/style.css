@@ -119,7 +119,7 @@ header{
 
 #chat-area #chat{
     background-image: url("../img/mine.jpg");    
-    height: 100px;
+    height: calc(888px - 180px);
     padding: 40px 80px;
 }
 
