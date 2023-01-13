@@ -40,10 +40,10 @@
                 </section>
                 <section id="contacts">
                     <div class="h-60px d-flex border border-secondary-subtle">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100 px-3 m-2 rounded border-0">
+                        <input type="text" v-model="searchTerm" @keyup="filterContacts" placeholder="Cerca o inizia una nuova chat" class="w-100 px-3 m-2 rounded border-0">
                     </div>
                     <div class="ofy-auto" id="contact-list">
-                        <div v-for="(contact, i) in contacts" @click="currentIndex = i" :class="{ 'active': currentIndex === i}" class="h-100px border border-secondary-subtle d-flex align-items-center p-3">
+                        <div v-for="(contact, i) in contacts" @click="currentIndex = i" :class="{'active': currentIndex === i}, {'d-none': contact.visible === false}" class="h-100px border border-secondary-subtle d-flex align-items-center p-3">
                             <figure class="w-60px rounded rounded-circle overflow-hidden m-0">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" class="img-fluid" :alt="contact.name">
                             </figure>
@@ -63,7 +63,7 @@
                         </figure>
                         <div class="h-100 p-3">
                             <span class="d-block">{{currentContact.name}}</span>
-                            <span class="text-muted fw-light">Ultimo accesso: </span>
+                            <span class="text-muted fw-light">Ultimo accesso: {{currentTime}}</span>
                         </div>                    
                     </div>
                     <div class="d-flex align-items-center" id="this-user-tools">

@@ -3,8 +3,9 @@ const dt = luxon.DateTime
 const app = Vue.createApp({
     data(){
         return{
+            searchTerm:'',
             newMessage:{
-              date: this.getCurrentTime(),
+              date: this.currentTime,
               text: '',
               status: 'sent'
             },
@@ -102,16 +103,16 @@ const app = Vue.createApp({
       },
       currentChat(){
         return this.currentContact.messages
-      }
-    },
-    methods:{
-      getCurrentTime(){
+      },
+      currentTime(){
         return dt.now().toLocaleString(dt.DATETIME_MED)
       },
+    },
+    methods:{
       sendNewMessage(){
         this.currentChat.push(this.newMessage)
         this.newMessage = {
-          date: this.getCurrentTime(),
+          date: this.currentTime(),
           text: '',
           status: 'sent'
         }
@@ -119,13 +120,13 @@ const app = Vue.createApp({
       receiveNewMessage(){
         setTimeout(() => {
           this.newMessage = {
-            date: this.getCurrentTime(),
+            date: this.currentTime(),
             text: 'Ok',
             status: 'received'
           }
           this.currentChat.push(this.newMessage)
           this.newMessage = {
-            date: this.getCurrentTime(),
+            date: this.currentTime(),
             text: '',
             status: 'sent'
           }
@@ -136,6 +137,16 @@ const app = Vue.createApp({
           this.sendNewMessage()
           this.receiveNewMessage()
         }
+      },
+      filterContacts(){
+        this.contacts.filter(currentContact => {
+          if(!currentContact.name.toLowerCase().includes(this.searchTerm.trim())){
+            currentContact.visible = false
+          }
+          if(this.searchTerm === ''){
+            currentContact.visible = true
+          }
+        })
       }
     }
 });
