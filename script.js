@@ -1,3 +1,5 @@
+const dt = luxon.DateTime
+
 const app = Vue.createApp({
     data(){
         return{
@@ -90,7 +92,9 @@ const app = Vue.createApp({
         }
     },
     methods:{
-      
+      getCurrentTime(){
+        dt.now().toLocaleString(dt.DATETIME_MED)
+      }
     }
 });
 
