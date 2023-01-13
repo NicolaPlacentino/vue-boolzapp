@@ -148,6 +148,12 @@ const app = Vue.createApp({
             currentContact.visible = true
           }
         })
+      },
+      deleteMessage(message){
+        this.currentChat.splice(message, 1)
+      },
+      alertInfo(){
+        alert('Eh mi spiace ma quel pulsante sta lì tanto per. Non ho informazioni da farti vedere')
       }
     }
 });

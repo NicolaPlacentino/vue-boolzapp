@@ -133,3 +133,12 @@ header{
 
     cursor: pointer;
 }
+
+.dropdown{
+    opacity: 0;
+    transition: all 0.15s;
+}
+
+.message:hover .dropdown{
+    opacity: 1;
+}
