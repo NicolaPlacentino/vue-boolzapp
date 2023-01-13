@@ -5,7 +5,7 @@ const app = Vue.createApp({
         return{
             searchTerm:'',
             newMessage:{
-              date: this.currentTime,
+              date: '',
               text: '',
               status: 'sent'
             },
@@ -110,9 +110,10 @@ const app = Vue.createApp({
     },
     methods:{
       sendNewMessage(){
+        this.newMessage.date = this.currentTime
         this.currentChat.push(this.newMessage)
         this.newMessage = {
-          date: this.currentTime(),
+          date: '',
           text: '',
           status: 'sent'
         }
@@ -120,13 +121,13 @@ const app = Vue.createApp({
       receiveNewMessage(){
         setTimeout(() => {
           this.newMessage = {
-            date: this.currentTime(),
+            date: this.currentTime,
             text: 'Ok',
             status: 'received'
           }
           this.currentChat.push(this.newMessage)
           this.newMessage = {
-            date: this.currentTime(),
+            date: this.currentTime,
             text: '',
             status: 'sent'
           }
