@@ -150,7 +150,9 @@ const app = Vue.createApp({
         })
       },
       deleteMessage(message){
-        this.currentChat.splice(message, 1)
+        const index = this.currentChat.indexOf(message)
+        this.currentChat.splice(index, 1)
+        console.log(message)
       },
       alertInfo(){
         alert('Eh mi spiace ma quel pulsante sta lì tanto per. Non ho informazioni da farti vedere')
